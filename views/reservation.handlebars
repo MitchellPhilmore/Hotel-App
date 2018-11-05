@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservations</title>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/showreservations">Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/reservation">Book Room</a>
+        </li>
+      </ul>
+     <a href="api/reservation">Rooms API</a>
+
+    </div>
+  </nav>
+
+<style>
+   .display-1{
+       color:lightgray;
+       text-align:center;
+   }
+ i{
+     font-size:50px;
+ }
+
+</style>
+<body>
+<div class="container">
+ <div class="row">
+   <div class="col-md-2">
+   </div>
+   <div class="col-md-10">
+
+ 
+<form class="mt-4" method="POST" action="/reservation">
+        <div class="font-weight-bold form-group">
+           <label for="firstname">First Name</label>
+          <input name="firstname" type="text" class="form-control" id="firstname"  placeholder="Enter firstname">
+        </div>
+        <div class="form-group"> 
+          <label class="font-weight-bold" for="lastname">Last Name</label>
+          <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Enter lastname">
+        </div>
+        <div class="form-group"> 
+                <label class="font-weight-bold" for="checkin">Arrival</label>
+                <input name="arrival" type="text" class="form-control" id="checkin" placeholder="Format: 01/1/2018">
+              </div>
+              <div class="form-group"> 
+                    <label class="font-weight-bold" for="checkin">Departure</label>
+                    <input name="departure" type="text" class="form-control" id="checkout" placeholder="Format: 01/5/2018">
+                  </div>
+        <button type="submit" class="btn btn-lg btn-outline-dark">Submit</button>
+      </form>
+
+
+
+   </div>
+ </div>
+</div>
+
+
+
+
+       
+ <script>
+     
+        $.get('api/reservation').then(data=>console.log(data))
+       
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservations</title>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+
+<style>
+    .review{
+        height:auto;
+        overflow:hidden;
+    }
+
+   
+</style>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/showreservations">Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/reservation">Book Room</a>
+        </li>
+      </ul>
+     <a href="api/reservation">Rooms API</a>
+
+    </div>
+  </nav>
+<div class="container">
+     
+ <div class="row">
+   
+     <div class="col-md-12 text-center mt-4 border border-dark">
+         <h4>Write Review</h4>
+        <hr>
+         <form>
+         <label for="username">Name:</label>
+           <input class="form-control text-center" id="name" name="name" type="text" placeholder="Enter your name">
+             <div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea name="comment" class="form-control" rows="5" id="comment"></textarea>
+</div>
+ <button id="submit" class="btn btn-outline-dark mb-3">Submit</button>
+ </form>
+  </div>
+  <div class="col-md-1"></div>
+  
+   
+   </div>
+
+   <div class="row">
+       <div class="col-md-12  text-center  mt-4 border border-dark">
+       <div class="review">
+           <h4>Reviews</h4>
+           <hr>
+           
+           
+           
+       </div>
+   </div>
+
+ </div>
+</div>
+
+
+
+
+       
+ <script>
+
+     $.get('/api/reviews').then(data=>{
+         console.log(data)
+         data.forEach(comment=>{
+             $('.review').append(`
+               <h5 class="bg-dark text-white">${comment.name}</h5>
+               <hr>
+               <p>${comment.comment}</p>
+               <hr>
+             
+             `)
+             
+         })
+     })
+
+    $('#submit').on('click',function(){
+         $.ajax({
+        url:'/reviews',
+        method:'POST',
+        data:'name='+ $('#name').val() + '&' +'comment=' +$('#comment').val()
+    }).then(()=>{
+       alert('Thanks for your review')
+    })
+
+    })
+   
+  
+
+    
+     
+       
+       
+    </script>
+    
+</body>
+</html>

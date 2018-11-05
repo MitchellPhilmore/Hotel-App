@@ -1,0 +1,70 @@
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <img style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/showreservations">Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reservation">Book Room</a>
+        </li>
+      </ul>
+     <a href="api/reservation">Rooms API</a>
+
+    </div>
+  </nav>
+
+    <div class="container mt-5">
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+            <th class="thead-light">First name</th>
+            <th class="thead-light">Last name</th>
+            <th class="thead-light">Arrival</th>
+            <th class="thead-light">Departure</th>
+            </tr>
+        </table>
+    </div>
+    
+
+</body>
+
+
+</div>
+<script>
+    $.get('/api/reservation').then(data=>{
+       data.forEach(data=>{
+				let table = $(
+					`   <tr>
+						<td>${data.firstname}</td>
+						<td>${data.lastname}</td>
+
+						<td>${data.arrival}</td>
+						<td>${data.departure}</td>
+                    </tr>
+					`
+					)
+				$('table').append(table)
+
+    })
+    })
+</script>
+
+
