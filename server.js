@@ -104,6 +104,7 @@ let express = require('express'),
 
        newEntry.save().then(()=>console.log('Saved!'))
        .catch(err=>console.log(JSON.stringify(err)))
+       
     
     })
 
