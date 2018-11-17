@@ -1,11 +1,28 @@
 let express = require('express'),
     path = require('path'),
-    port = 3000 // process.env.PORT || 8080
+    port =  process.env.PORT || 8080
     app = express(),
     bodyParser = require('body-parser'),
     exhb = require('express-handlebars'),
-    model = require('./db/models.js'),
-    {reviews,reservations} = require('./db/models.js')
+    mongoose = require('mongoose')
+
+    //Create Mongodb connection
+
+    let uri = 'mongodb://mitchell:mitch1987@ds161856.mlab.com:61856/hotelphilmore'
+
+    //Model
+    let Reservation = mongoose.model("Reservations",{
+        firstname:String,
+        lastname:String,
+        arrival:String,
+        departure:String
+    })
+
+    mongoose.connect(uri).then(()=>console.log('Connected')).catch(err=>console.log(JSON.stringify(err)))
+
+ 
+
+   
 
    
 
@@ -28,9 +45,8 @@ let express = require('express'),
     })
 
     app.get('/api/reservation',(req,res)=>{
-        reservations.findAll().then(data=>{
-//res.render('allreservations',{reservation:data})       
-             res.json(data)
+        Reservation.find({},(err,data)=>{
+            res.json(data)
           
            
         })
@@ -54,27 +70,35 @@ let express = require('express'),
     app.post('/reservation',(req,res)=>{
         let {firstname,lastname,arrival,departure} = req.body
        // console.log(req.body)
-          reservations.sync().then(()=>{
-            return reservations.create({
-                firstname:firstname,
-                lastname:lastname,
-                arrival:arrival,
-                departure:departure
-            })
+
+       let newReservation = {
+        firstname:firstname,
+        lastname:lastname,
+        arrival:arrival,
+        departure:departure
+    }
+
+    let newEntry = new Reservation(newReservation)
+         newEntry.save().then(()=>{
+             console.log('Saved!')
+         })
+         .catch(err=>console.log(JSON.stringify(err)))
+         
+        
         })
-        res.redirect('/')
-    })
+  
+
 
     app.post('/reviews',(req,res)=>{
-        let {comment,name} = req.body
-        console.log(req.body)
-        reviews.sync().then(()=>{
-            return reviews.create({
-                name:name,
-                comment:comment
-            })
-        })
-       res.redirect('/reviews')
+    //     let {comment,name} = req.body
+    //     console.log(req.body)
+    //     reviews.sync().then(()=>{
+    //         return reviews.create({
+    //             name:name,
+    //             comment:comment
+    //         })
+    //     })
+    //    res.redirect('/reviews')
 
     })
 
