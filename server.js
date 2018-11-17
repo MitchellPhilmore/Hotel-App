@@ -18,13 +18,12 @@ let express = require('express'),
         departure:String
     })
 
+    let Reviews = mongoose.model("Reviews",{
+        name:String,
+        comment:String
+    })
+
     mongoose.connect(uri).then(()=>console.log('Connected')).catch(err=>console.log(JSON.stringify(err)))
-
- 
-
-   
-
-   
 
     app.engine('handlebars',exhb({layout:'main'}))
     app.set('view engine', 'handlebars')
@@ -53,9 +52,9 @@ let express = require('express'),
     })
 
     app.get('/api/reviews',(req,res)=>{
-        reviews.findAll().then(data=>{
-            res.json(data)
-        })
+       Reviews.find({},(err,data)=>{
+           res.json(data)
+       })
     })
 
     app.get('/showreservations',(req,res)=>{
@@ -83,6 +82,8 @@ let express = require('express'),
              console.log('Saved!')
          })
          .catch(err=>console.log(JSON.stringify(err)))
+
+         res.redirect("/")
          
         
         })
@@ -90,16 +91,20 @@ let express = require('express'),
 
 
     app.post('/reviews',(req,res)=>{
-    //     let {comment,name} = req.body
-    //     console.log(req.body)
-    //     reviews.sync().then(()=>{
-    //         return reviews.create({
-    //             name:name,
-    //             comment:comment
-    //         })
-    //     })
-    //    res.redirect('/reviews')
 
+
+       let {comment,name} = req.body
+
+       let newComment = {
+           name:name,
+           comment:comment
+       }
+
+       let newEntry = new Reviews(newComment)
+
+       newEntry.save().then(()=>console.log('Saved!'))
+       .catch(err=>console.log(JSON.stringify(err)))
+    
     })
 
     app.listen(port,()=>console.log(`Server is running on port ${3000}`))
