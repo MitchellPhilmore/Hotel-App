@@ -8,7 +8,7 @@ let express = require('express'),
 
     //Create Mongodb connection
 
-    let uri = 'mongodb://mitchell:mitch1987@ds161856.mlab.com:61856/hotelphilmore'
+    let uri = 'mongodb://admin:mitch1987@ds161856.mlab.com:61856/hotelphilmore'
 
     //Model
     let Reservation = mongoose.model("Reservations",{
