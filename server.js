@@ -1,6 +1,6 @@
 let express = require('express'),
     path = require('path'),
-    port = 3000
+    port = process.env.PORT || 8080
     app = express(),
     bodyParser = require('body-parser'),
     exhb = require('express-handlebars'),
