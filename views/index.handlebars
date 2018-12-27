@@ -1,180 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home</title>
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-</head>
-<body>
-  <style>
-    html,body{
-      height:100%;
-      width:100%;
-    }
-
-    h3{
-        font-family: 'Dancing Script', cursive;
-    }
-
-  
-  </style>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <img style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
-   
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/showreservations">Reservations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/reservation">Book Room</a>
-        </li>
-      </ul>
-     <a href="api/reservation">Rooms API</a>
-
-    </div>
-  </nav>
-
-  <style>
-  /* img{
-    width:150px;
-  } */
-
-  i{
-    color:gold;
-  }
-  mt-6{
-    margin-top:100px;
-  }
-
-  .rooms{
-      height:150px;
-      width:100%;
-  }
-  </style>
-
-  <!-- Reviews -->
-  <div class="container mt-5">
-      <div class="row mb-3">
-        <div class="col-xs-12  col-sm-6 col-md-3">
-            <div class="card" style="width: 15rem;">
-                <img class="card-img-top img-thumbnail rooms" src="https://www.uwishunu.com/wp-content/uploads/2009/09/loews-philadelphia-hotel-uw1.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Room, 2 double beds</h5>
-                  <hr>
-                  <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card" style="width: 15rem;">
-                <img class="card-img-top img-thumbnail rooms" src="https://static.boydgaming.net/vacationshawaii/assets/photo_tour/GC_deluxeking.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Room, 2 double beds</h5>
-                  <hr>
-                    <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                </div>
-              </div>
-    
-
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card" style="width: 15rem;">
-                <img class="card-img-top img-thumbnail rooms" src="https://www.quiethotelroom.org/wp-content/uploads/quietroom-hotelroom-gold.jpeg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Room, 2 double beds</h5>
-                  <hr>
-                   <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-xs-12  col-sm-6 col-md-3">
-            <div class="card" style="width: 15rem;">
-                <img class="card-img-top img-thumbnail rooms" src="http://www.hardrockhotelsd.com/img/rooms/rockstarsuites-gold2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Room, 2 double beds</h5>
-                    <hr>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Home</title>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+   </head>
+   <body>
+      <style>
+         html,body{
+         height:100%;
+         width:100%;
+         }
+         h3{
+         font-family: 'Dancing Script', cursive;
+         }
+         nav{
+         height:150px;
+         }
+         li{
+         margin:3px;
+         }
+         i{
+         color:gold;
+         }
+         mt-6{
+         margin-top:100px;
+         }
+         .rooms{
+         height:150px;
+         width:100%;
+         }
+      </style>
+      <nav class=" blue-grey lighten-5">
+         <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img class="brand-logo" style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt=""></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li class=""> <a style="text-decoration: white" class="black-text tab" href="/showreservations">Reservations</a></li>
+               <li><a style="text-decoration: white"  class="black-text tab" href="/reservation">Book Room</a></li>
+               <li> <a style="text-decoration: white" class="black-text tab" href="api/reservation">Rooms API</a></li>
+            </ul>
+         </div>
+      </nav>
+      <!-- Reviews -->
+      <div class="container mt-5">
+         <div class="row mb-3">
+            <div class="col-xs-12  col-sm-6 col-md-3">
+               <div class="card" style="width: 15rem;">
+                  <img class="card-img card-img-top img-thumbnail rooms" src="https://www.uwishunu.com/wp-content/uploads/2009/09/loews-philadelphia-hotel-uw1.jpg" alt="Card image cap">
+                  <div class="card-body">
+                     <h5 class="card-title">Room, 2 double beds</h5>
+                     <hr>
                      <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                  
-                </div>
-              </div>
-        </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+               <div class="card" style="width: 15rem;">
+                  <img class="card-img-top img-thumbnail rooms" src="https://static.boydgaming.net/vacationshawaii/assets/photo_tour/GC_deluxeking.jpg" alt="Card image cap">
+                  <div class="card-body">
+                     <h5 class="card-title">Room, 2 double beds</h5>
+                     <hr>
+                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+               <div class="card" style="width: 15rem;">
+                  <img class="card-img-top img-thumbnail rooms" src="https://www.quiethotelroom.org/wp-content/uploads/quietroom-hotelroom-gold.jpeg" alt="Card image cap">
+                  <div class="card-body">
+                     <h5 class="card-title">Room, 2 double beds</h5>
+                     <hr>
+                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-12  col-sm-6 col-md-3">
+               <div class="card" style="width: 15rem;">
+                  <img class="card-img-top img-thumbnail rooms" src="http://www.hardrockhotelsd.com/img/rooms/rockstarsuites-gold2.jpg" alt="Card image cap">
+                  <div class="card-body">
+                     <h5 class="card-title">Room, 2 double beds</h5>
+                     <hr>
+                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row ml-5  jumbotron  w-75">
+            <div class=" col-xs-6 col-md-12"></div>
+            <div class=" pt-5  col-xs-5 col-md-4  ">
+               <h1 class="display-4">Review Summary</h1>
+               <div class="fivestar">
+                  <span class="lead mr-3">5</span>
+                  <i class="fas fa-star"> 
+                  </i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <div class="fourstar">
+                  <span class="lead mr-3">4</span>
+                  <i class="fas fa-star"> 
+                  </i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <div class="threestar">
+                  <span class="lead mr-3">3</span>
+                  <i class="fas fa-star"> 
+                  </i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <div class="twostar">
+                  <span class="lead mr-3">2</span>
+                  <i class="fas fa-star"> 
+                  </i><i class="fas fa-star"></i>
+               </div>
+               <div class="onestar">
+                  <span class="lead mr-3">1</span>
+                  </i><i class="fas fa-star"></i>
+               </div>
+            </div>
+            <div class="col-md-3 mt-5">
+               <p class="text-right pl-2"><a href="/reviews"><i class="far fa-plus-square"></i> Write a Review</a></p>
+               <h1 class=" pl-5 text-right mt-5">4.1</h1>
+               <div class="wrap text-right">
+                  </i><i class="fas fa-star"></i>
+                  <i class=" fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <h4 class=" text-sm-right">Very Good!</h4>
+            </div>
+         </div>
       </div>
-    <div class="row ml-5  jumbotron  w-75">
-       <div class=" col-xs-6 col-md-12"></div>
-       <div class=" pt-5  col-xs-5 col-md-4  ">
-         <h1 class="display-4">Review Summary</h1>
-
-         <div class="fivestar">
-              <span class="lead mr-3">5</span>
-              <i class="fas fa-star"> 
-              </i><i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-      
-      </div>
-
-      <div class="fourstar">
-          <span class="lead mr-3">4</span>
-          <i class="fas fa-star"> 
-          </i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-       </div>
-
-       <div class="threestar">
-          <span class="lead mr-3">3</span>
-          <i class="fas fa-star"> 
-          </i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        
-       </div>
-
-       <div class="twostar">
-          <span class="lead mr-3">2</span>
-          <i class="fas fa-star"> 
-          </i><i class="fas fa-star"></i>
-        </div>
-
-          <div class="onestar">
-            <span class="lead mr-3">1</span>
-            </i><i class="fas fa-star"></i>
-        
-          </div>
-
-          </div>
-          
-      
-          <div class="col-md-3 mt-5">
-              <p class="text-right pl-2"><a href="/reviews"><i class="far fa-plus-square"></i> Write a Review</a></p>
-            <h1 class=" pl-5 text-right mt-5">4.1</h1>
-            <div class="wrap text-right">
-          </i><i class="fas fa-star"></i>
-          <i class=" fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-          
-          <h4 class=" text-sm-right">Very Good!</h4>
-          
-          </div> 
-
-    </div>
-
-    
-    
-    
-  </div>
-</body>
+   </body>
+   <script>
+      $(document).ready(function(){
+       $('.tabs').tabs();
+      });
+   </script>
 </html>
