@@ -1,92 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Reservations</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-      <script
-         src="https://code.jquery.com/jquery-3.3.1.min.js"
-         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-         crossorigin="anonymous"></script>
-   </head>
-   <style>
-      .review{
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Reservations</title>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   </script>
+   <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+</head>
+<style>
+   .review{
       height:auto;
       overflow:hidden;
       }
       nav{
       height:150px;
       }
+      i{
+         color:black;
+      }
+      .container{
+         margin-top:100px;
+      }
+        body{
+      background: #F8F8F8
+   }
+   .row{
+      background: #F5F5F5;
+      opacity:0.7
+   }
    </style>
-   <body>
-      <nav class="grey lighten-2">
+
+<body>
+     
+     
+     <head>
+       <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+   
+     </head>
+     
+     
+     
+     <style>
+   
+         html,
+         body {
+            height: 100%;
+            width: 100%;ed
+         }
+   
+         nav {
+            height: 80px;
+         }
+   
+         li {
+            margin: 3px;
+         }
+   
+         i {
+            color: black;
+         }
+   
+         mt-6 {
+            margin-top: 100px;
+         }
+   
+         .rooms {
+            height: 150px;
+            width: 100%;
+         }
+   
+         .card {
+            margin-top: 30px;
+            float: left;
+   
+         }
+   
+         img {
+            height: 200px;
+         }
+   
+           
+   
+         .brand-logo{
+            height:170px;
+            width:180px;
+            
+         }
+         #logo{
+            font-family: 'Satisfy', cursive;
+         }
+   
+   
+      </style>
+      <nav class=" blue-grey  blue-grey darken-4 z-depth-5">
          <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img class="brand-logo" style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt=""></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li> <a href="/showreservations">Reservations</a></li>
-               <li><a href="/reservation">Book Room</a></li>
-               <li> <a href="api/reservation">Rooms API</a></li>
+            <a href="/">
+              
+             <div style=" border:5px solid gray;" class="brand-logo circle responsive-img  grey lighten-3">
+                <h5 id="logo" class="black-text" style="text-align:center; position:relative; top:40px;">Hotel Philmore</h5>
+                <img  style="height:110px; width:130px; position:relative; left:20px;" src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+                 
+                 </a>
+             </div>
+                 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="color:white" class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+               <li class=""> <a style="text-decoration:white" class="white-text tab" href="/showreservations">Reservations</a></li>
+               <li><a style="text-decoration: white" class="white-text tab right" href="/reservation">Booking</a></li>
+               <li> <a style="text-decoration: white" class="white-text tab" href="api/reservation">Reservations API</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-demo">
+                 <li><a href="/">Home</a></li>
+               <li><a href="/reservation">Booking </a></li>
+               <li><a href="/showreservations">Reservations</a></li>
+                <li><a href="api/reservation">API</a></li>
+             
             </ul>
          </div>
       </nav>
-      </div>
-      </nav>
-      <div class="container">
-         <br>
-         <div class="row">
-            <div class="col-md-12 text-center mt-4 border border-dark">
-               <h4>Write Review</h4>
-               <hr>
-               <form>
-                  <label for="username">Name:</label>
-                  <input  id="name" name="name" type="text" placeholder="Enter your name">
-                  <div class="form-group"></div>
-                  <label for="comment">Comment:</label>
-                  <textarea name="comment" class="materialize-textarea" rows="5" id="comment"></textarea>
-            </div>
-            <button id="submit" class="btn-large black">Submit</button>
-            </form>
-         </div>
-         <div class="col-md-1"></div>
-      </div>
+     
+   <div class="container">
+      <br>
       <div class="row">
-         <div class="col-md-12  text-center  mt-4 border border-dark">
-            <div class="review">
-               <h4>Reviews</h4>
-               <hr>
-            </div>
+         <div class="col s12 m12 text-center">
+            <h4>Write Review</h4>
+            <hr>
+            <form>
+               <label for="username">Name:</label>
+               <input id="name" name="name" type="text" placeholder="Enter your name"  class="validate" required="" aria-required="true">
+               <div class="form-group"></div>
+               <label for="comment">Comment:</label>
+               <textarea name="comment" class="materialize-textarea validate" rows="5" id="comment"   required="" aria-required="true"></textarea>
+         </div>
+         <div class="center">
+            <button id="submit" class="btn-large blue-grey darken-4 center hover">Submit</button>
+         </div>
+
+         </form>
+      </div>
+      <div class="col-md-1"></div>
+   </div>
+   <div class="row">
+      <div class="col-md-12  text-center  mt-4 border border-dark">
+         <div class="review center">
+            <h3>Customer reviews</h3>
+            <hr>
          </div>
       </div>
-      </div>
-      <script>
-         $.get('/api/reviews').then(data=>{
-             console.log(data)
-             data.forEach(comment=>{
-                 $('.review').append(`
-                   <h5 class="bg-dark text-white">${comment.name}</h5>
-                   <hr>
+   </div>
+   </div>
+   <script>
+      $('.sidenav').sidenav();
+
+      $.get('/api/reviews').then(data => {
+         console.log(data)
+         data.forEach(comment => {
+            $('.review').append(`
+                   <h5 class="black white-text">
+                      <i style="font-size:40px" class="material-icons white">person_pin</i>  ${comment.name}</h5>
                    <p>${comment.comment}</p>
-                   <hr>
+                   <br>
+                   <br>
+                   
                  
                  `)
-                 
-             })
+
          })
-         
-         $('#submit').on('click',function(){
-             $.ajax({
-            url:'/reviews',
-            method:'POST',
-            data:'name='+ $('#name').val() + '&' +'comment=' +$('#comment').val()
-         }).then(()=>{
-           alert('Thanks for your review')
+      })
+
+      $('#submit').on('click', function () {
+         $.ajax({
+            url: '/reviews',
+            method: 'POST',
+            data: 'name=' + $('#name').val() + '&' + 'comment=' + $('#comment').val()
+         }).then(() => {
+            alert('Thanks for your review')
          })
-         
-         })
-       </script>
-   </body>
+
+      })
+   </script>
+
+</body>
+
 </html>

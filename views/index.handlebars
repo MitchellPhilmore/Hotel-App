@@ -1,150 +1,685 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Home</title>
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-   </head>
-   <body>
-      <style>
-         html,body{
-         height:100%;
-         width:100%;
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Home</title>
+
+   <link rel="manifest" href="/manifest.json">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <link href="/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image" />
+   <link href="/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image" />
+   <link href="/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+      rel="apple-touch-startup-image" />
+   <link href="/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+   <link href="/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image" />
+
+
+   <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+<script>
+      if ('serviceWorker' in navigator) {
+         navigator.serviceWorker.register('/worker.js')
+            .then(function (registration) {
+               console.log('Registration successful, scope is:', registration.scope);
+            })
+            .catch(function (error) {
+               console.log('Service worker registration failed, error:', error);
+            });
+      }
+   </script>
+
+
+
+</head>
+
+<style>
+   span {
+      height: 2px;
+      line-height: 10px;
+      width: 100%;
+      font-size: 10px;
+      opacity: 0.6;
+   }
+
+   body {
+      background: #F8F8F8
+   }
+
+   .progress {
+      width: 200px;
+      height: 10px;
+      background: white
+   }
+
+   .container {
+      margin-top: 15px;
+   }
+
+   .indicator-item{
+      left: 25%;
+      background: #263238;
+
+   }
+   .slider .indicators .indicator-item.active {
+  background-color: #263238;
+  opacity:0.5;
+}
+
+.tab{
+   background:#263238;
+    
+}
+
+</style>
+
+<body>
+     
+     
+     <head>
+       <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+   
+     </head>
+     
+     
+     
+     <style>
+   
+         html,
+         body {
+            height: 100%;
+            width: 100%;ed
          }
-         h3{
-         font-family: 'Dancing Script', cursive;
+   
+         nav {
+            height: 80px;
          }
-         nav{
-         height:150px;
+   
+         li {
+            margin: 3px;
          }
-         li{
-         margin:3px;
+   
+         i {
+            color: black;
          }
-         i{
-         color:gold;
+   
+         mt-6 {
+            margin-top: 100px;
          }
-         mt-6{
-         margin-top:100px;
+   
+         .rooms {
+            height: 150px;
+            width: 100%;
          }
-         .rooms{
-         height:150px;
-         width:100%;
+   
+         .card {
+            margin-top: 30px;
+            float: left;
+   
          }
+   
+         img {
+            height: 200px;
+         }
+   
+           
+   
+         .brand-logo{
+            height:170px;
+            width:180px;
+            
+         }
+         #logo{
+            font-family: 'Satisfy', cursive;
+         }
+   
+   
       </style>
-      <nav class=" blue-grey lighten-5">
+      <nav class=" blue-grey  blue-grey darken-4 z-depth-5">
          <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img class="brand-logo" style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt=""></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li class=""> <a style="text-decoration: white" class="black-text tab" href="/showreservations">Reservations</a></li>
-               <li><a style="text-decoration: white"  class="black-text tab" href="/reservation">Book Room</a></li>
-               <li> <a style="text-decoration: white" class="black-text tab" href="api/reservation">Rooms API</a></li>
+            <a href="/">
+              
+             <div style=" border:5px solid gray;" class="brand-logo circle responsive-img  grey lighten-3">
+                <h5 id="logo" class="black-text" style="text-align:center; position:relative; top:40px;">Hotel Philmore</h5>
+                <img  style="height:110px; width:130px; position:relative; left:20px;" src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+                 
+                 </a>
+             </div>
+                 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="color:white" class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+               <li class=""> <a style="text-decoration:white" class="white-text tab" href="/showreservations">Reservations</a></li>
+               <li><a style="text-decoration: white" class="white-text tab right" href="/reservation">Booking</a></li>
+               <li> <a style="text-decoration: white" class="white-text tab" href="api/reservation">Reservations API</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-demo">
+                 <li><a href="/">Home</a></li>
+               <li><a href="/reservation">Booking </a></li>
+               <li><a href="/showreservations">Reservations</a></li>
+                <li><a href="api/reservation">API</a></li>
+             
             </ul>
          </div>
       </nav>
-      <!-- Reviews -->
-      <div class="container mt-5">
-         <div class="row mb-3">
-            <div class="col-xs-12  col-sm-6 col-md-3">
-               <div class="card" style="width: 15rem;">
-                  <img class="card-img card-img-top img-thumbnail rooms" src="https://www.uwishunu.com/wp-content/uploads/2009/09/loews-philadelphia-hotel-uw1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                     <h5 class="card-title">Room, 2 double beds</h5>
-                     <hr>
-                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                  </div>
-               </div>
+     
+
+   <div style="margin-top:100px;" class="slider z-depth-5">
+      <ul class="slides">
+         <li>
+
+            <img src="https://generocity.org/philly/wp-content/uploads/sites/2/2017/12/Visit-Philly-skyline-J-Fusco.jpg">
+            <!-- random image -->
+            <div class="caption center-align">
+               <h2 class="light grey-text text-lighten-3">Rated #1 Hotel in Philadelphia.</h2>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-               <div class="card" style="width: 15rem;">
-                  <img class="card-img-top img-thumbnail rooms" src="https://static.boydgaming.net/vacationshawaii/assets/photo_tour/GC_deluxeking.jpg" alt="Card image cap">
-                  <div class="card-body">
-                     <h5 class="card-title">Room, 2 double beds</h5>
-                     <hr>
-                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                  </div>
-               </div>
+         </li>
+         <li>
+            <img src="https://www.nycgo.com/images/made/images/uploads/articles/Rooftop-restaurants/Roofatthepublic-lowereastside-manhattan-nycThe-Roof_900_600_70.jpg">
+            <!-- random image -->
+            <div class="caption left-align">
+               <h2 class="light grey-text text-lighten-3">Luxury resturants</h2>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-               <div class="card" style="width: 15rem;">
-                  <img class="card-img-top img-thumbnail rooms" src="https://www.quiethotelroom.org/wp-content/uploads/quietroom-hotelroom-gold.jpeg" alt="Card image cap">
-                  <div class="card-body">
-                     <h5 class="card-title">Room, 2 double beds</h5>
-                     <hr>
-                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                  </div>
-               </div>
+         </li>
+         <li>
+            <img src="https://cdn.vox-cdn.com/thumbor/A5U3wUEyVltA2djQzxuIpPe_MpE=/0x0:1024x683/1200x900/filters:focal(431x261:593x423)/cdn.vox-cdn.com/uploads/chorus_image/image/54576601/Pool_at_Night_2._Mark_Knight._QG5C5660._Compressed.0.0.jpg">
+            <!-- random image -->
+            <div class="caption right-align">
+               <h2 class="light grey-text text-lighten-3">Rooftop Pool</h2>
             </div>
-            <div class="col-xs-12  col-sm-6 col-md-3">
-               <div class="card" style="width: 15rem;">
-                  <img class="card-img-top img-thumbnail rooms" src="http://www.hardrockhotelsd.com/img/rooms/rockstarsuites-gold2.jpg" alt="Card image cap">
-                  <div class="card-body">
-                     <h5 class="card-title">Room, 2 double beds</h5>
-                     <hr>
-                     <p class="card-text text-center"><a href="/reservation">RESERVE NOW</a>
-                  </div>
+         </li>
+         <li>
+            <img src="https://cache.marriott.com/marriottassets/marriott/SFODT/sfodt-fitness-0158-hor-feat.jpg">
+            <!-- random image -->
+            <div class="caption center-align">
+               <h2 class="light grey-text text-lighten-3">State of the art gym</h2>
+            </div>
+         </li>
+      </ul>
+   </div>
+
+
+   <!-- Reviews -->
+   <div class="container mt-4">
+      <div style="width:100%" class="row">
+         <div class="col s12 m6 l6 ">
+            <div class="card hoverable">
+               <div class="card-image slider">
+                  <ul style=" background:white; width:70%;" class="slides">
+                     <li class="responsive-img">
+                        <img style="height:220px width:100px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src=" https://media.expedia.com/hotels/1000000/30000/25600/25559/25559_105_z.jpg">
+                        <div class="caption center-align  ">
+
+                           <span class="card-title  blue-grey darken-4"> Double </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>300</div>
+                     </li>
+
+                     <li class="responsive-img">
+                        <img style="height:220px width:80px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://media.expedia.com/hotels/1000000/30000/25600/25559/25559_105_z.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Double </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>300</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.seaportboston.com/resourcefiles/mainimages/deluxe-two-double-2.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Double </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>300</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.seaportboston.com/resourcefiles/mainimages/premier-two-double-1.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Double </span>
+                        </div>
+                        <div class="tab accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>300</div>
+                     </li>
+
+               </div>
+
+               <div class="card-content">
+                  <p>The well-equipped Double rooms offer a spaciousness that lends itself to a sense of
+                     at-home living. Whether visiting for a luxurious holiday or long-term business trip, these rooms
+                     will offer a true sense of relaxation.</p>
+               </div>
+               <div class="card-action center">
+                  <button class=" blue-grey darken-4 btn-large waves-effect waves-light">
+                     <p class="card-text text-center "><a style="text-decoration:none; position:relative; bottom:15px;"
+                           class="white-text" href="/reservation">RESERVE
+                           NOW</a>
+                  </button>
                </div>
             </div>
          </div>
-         <div class="row ml-5  jumbotron  w-75">
-            <div class=" col-xs-6 col-md-12"></div>
-            <div class=" pt-5  col-xs-5 col-md-4  ">
-               <h1 class="display-4">Review Summary</h1>
-               <div class="fivestar">
-                  <span class="lead mr-3">5</span>
-                  <i class="fas fa-star"> 
-                  </i><i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+         <div class="col s12 m6 l6 ">
+            <div class="card hoverable">
+               <div class="card-image slider">
+                  <ul style=" background:white; width:70%;" class="slides">
+                     <li class="responsive-img">
+                        <img style="height:220px width:100px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src=" https://i2-prod.liverpoolecho.co.uk/incoming/article8626143.ece/ALTERNATES/s1227b/Presidential-Suite-BedroomJPG.jpg">
+                        <div class="caption center-align  ">
+
+                           <span class="card-title  blue-grey darken-4"> King </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>250</div>
+                     </li>
+
+                     <li class="responsive-img">
+                        <img style="height:220px width:80px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://dt16hatxdjo3c.cloudfront.net/_novaimg/galleria/1332676.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> King </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>250</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://media-cdn.tripadvisor.com/media/photo-s/05/d0/77/e6/the-palazzo-resort-hotel.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> King </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>250</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://dt16hatxdjo3c.cloudfront.net/_novaimg/galleria/1332654.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> King </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>250</div>
+
+                     </li>
+
                </div>
-               <div class="fourstar">
-                  <span class="lead mr-3">4</span>
-                  <i class="fas fa-star"> 
-                  </i><i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+
+               <div class="card-content">
+                  <p>These contemporary-styled rooms feature floor to ceiling windows with stunning views of the city
+                     of Philadelphia. Guests will benefit from a plush king sized bed and a four piece marble bathroom</p>
                </div>
-               <div class="threestar">
-                  <span class="lead mr-3">3</span>
-                  <i class="fas fa-star"> 
-                  </i><i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-               </div>
-               <div class="twostar">
-                  <span class="lead mr-3">2</span>
-                  <i class="fas fa-star"> 
-                  </i><i class="fas fa-star"></i>
-               </div>
-               <div class="onestar">
-                  <span class="lead mr-3">1</span>
-                  </i><i class="fas fa-star"></i>
+               <div class="card-action center">
+                  <button class=" blue-grey darken-4 btn-large waves-effect waves-light">
+                     <p class="card-text text-center "><a style="text-decoration:none; position:relative; bottom:15px;"
+                           class="white-text" href="/reservation">RESERVE
+                           NOW</a>
+                  </button>
                </div>
             </div>
-            <div class="col-md-3 mt-5">
-               <p class="text-right pl-2"><a href="/reviews"><i class="far fa-plus-square"></i> Write a Review</a></p>
-               <h1 class=" pl-5 text-right mt-5">4.1</h1>
-               <div class="wrap text-right">
-                  </i><i class="fas fa-star"></i>
-                  <i class=" fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+         </div>
+         <div class="col s12 m6 l6 ">
+            <div class="card hoverable">
+               <div class="card-image slider">
+                  <ul style=" background:white; width:70%;" class="slides">
+                     <li class="responsive-img">
+                        <img style="height:220px width:100px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src=" https://www.adelaidehotelconferences.com/images/bt_property/75/original-1507706694-pullman2.jpg">
+                        <div class="caption center-align  ">
+
+                           <span class="card-title  blue-grey darken-4">Standard</span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>275</div>
+                     </li>
+
+                     <li class="responsive-img">
+                        <img style="height:220px width:80px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.adelaidehotelconferences.com/images/bt_property/75/original-1507706682-pullman.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4">Standard</span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>275</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.thewindsorsuites.com/resourcefiles/mainimages/studiobalcony-rooms_1.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4">Standard</span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>275</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.ahstatic.com/photos/b217_ro_01_p_2048x1536.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4">Standard</span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>275</div>
+
+                     </li>
+
                </div>
-               <h4 class=" text-sm-right">Very Good!</h4>
+
+               <div class="card-content">
+                  <p>Comfortable room decorated in pastel tones. Standard rooms are equipped with shower or bathtub and
+                     some of them with balcony overlooking hotel garden. Each room is air conditioned and has a
+                     flat-screen TV cozy king size bed and spacious wardrobe.</p>
+               </div>
+               <div class="card-action center">
+                  <button class=" blue-grey darken-4 btn-large waves-effect waves-light">
+                     <p class="card-text text-center "><a style="text-decoration:none; position:relative; bottom:15px;"
+                           class="white-text" href="/reservation">RESERVE
+                           NOW</a>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <div class="col s12 m6 l6 ">
+            <div class="card hoverable">
+               <div class="card-image slider">
+                  <ul style=" background:white; width:70%;" class="slides">
+                     <li class="responsive-img">
+                        <img style="height:220px width:100px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src=" https://files.salsacdn.com/card/96_Royal_Hotel_Sanremo/image/4_d.20170803172025.jpg">
+                        <div class="caption center-align  ">
+
+                           <span class="card-title  blue-grey darken-4"> Penthouse </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>550</div>
+                     </li>
+
+                     <li class="responsive-img">
+                        <img style="height:220px width:80px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://awscloudfront.kempinski.com/34366796/jpeg_kempinski-das-tirol_living-room_as5-2-webseite.jpg;width=982;height=401;mode=crop;anchor=middlecenter;autorotate=true;quality=90;scale=both;progressive=true;encoder=freeimage">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Penthouse </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>550</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.moonpalacecancun.com/sites/default/files/presidential-suite-accommodations-moon-palace-cancun-pie-sep2017-680x442-2_0.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Penthouse </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>550</div>
+                     </li>
+                     <li class="responsive-img">
+                        <img style="height:220px width:250px position:relative; right:45px; border:2px solid gray; padding:0; "
+                           class="responsive-img materialboxed" src="https://www.moonpalacecancun.com/sites/default/files/presidential-suite-accommodations-moon-palace-cancun-destacado-galeria-sep2017-773x493_0.jpg">
+                        <div class="caption center-align  ">
+                           <span class="card-title  blue-grey darken-4"> Penthouse </span>
+                        </div>
+                        <div class="tab  accent-4 white-text center-text" style="position:absolute; border-radius:30px; top:80%; opacity:0.7; left:55%; width:150px; height:300px; font-size:45px; "><i
+                              style="font-size:50px;" class="material-icons white-text text-center">monetization_on </i>550</div>
+
+                     </li>
+
+               </div>
+
+               <div class="card-content">
+                  <p> The Presidental suites are bit reminiscent of a bed and breakfast, offering a boutique
+                     experience, Its two-level Presidential Suite includes a fireplace to keep the space cozy in the
+                     winter, along with a spiral staircase leading to its plush king-size bed. .</p>
+               </div>
+               <div class="card-action center">
+                  <button class=" blue-grey darken-4 btn-large waves-effect waves-light">
+                     <p class="card-text text-center "><a style="text-decoration:none; position:relative; bottom:15px;"
+                           class="white-text" href="/reservation">RESERVE
+                           NOW</a>
+                  </button>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+      <div class="row">
+         <div class=" col m-12"></div>
+         <div>
+            <h1 class="display-4">Review Summary</h1>
+            <div class="fivestar">
+               <span style="font-size:35px;">5 </span>
+               <span>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <div class=" progress">
+                     <div class="determinate" style="width: 80%; background:gold"></div>
+
+                  </div>
+               </span>
+            </div>
+            <div class="fourstar">
+               <span style="font-size:35px;">4</span>
+               <span>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  <i style="color:gold" class="material-icons">star</i>
+                  </p>
+               </span>
+               <div class=" progress">
+                  <div class="determinate" style="width: 10%;  background:gold"></div>
+               </div>
+               <div class="fourstar">
+                  <span style="font-size:35px;">3</span>
+                  <span>
+                     <i style="color:gold" class="material-icons">star</i>
+                     <i style="color:gold" class="material-icons">star</i>
+                     <i style="color:gold" class="material-icons">star</i>
+                     </p>
+                  </span>
+                  <div style="width:200px;  height:10px;" class=" progress">
+                     <div class="determinate" style="width: 0%"></div>
+                  </div>
+               </div>
+               <div class="fourstar">
+                  <span style="font-size:35px;">2</span>
+                  <span>
+                     <i style="color:gold" class="material-icons">star</i>
+                     <i style="color:gold" class="material-icons">star</i>
+                     </p>
+                  </span>
+                  <div class=" progress">
+                     <div class="determinate" style="width: 5%;  background:gold"></div>
+                  </div>
+               </div>
+               <div class="star">
+                  <span style="font-size:35px;">1</span>
+                  <span>
+                     <i style="color:gold" class="material-icons">star</i>
+                     </p>
+                  </span>
+                  <div class=" progress">
+                     <div class="determinate" style="width: 5%; background:gold"></div>
+                  </div>
+
+               </div>
+               <hr>
+               <div class="col-md-3 mt-5">
+                  <div>
+                     <button class=" blue-grey darken-4 btn-large waves-effect waves-light center"><a class="white-text text-center  "
+                           href="/reviews"><i class="material-icons white-text ">add_box</i> Write Review</a></p>
+                  </div>
+
+
+               </div>
             </div>
          </div>
       </div>
-   </body>
-   <script>
-      $(document).ready(function(){
-       $('.tabs').tabs();
-      });
-   </script>
+   </div>
+   
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   
+   <style>
+     footer{
+         height:40%;
+         width:100%;
+         background:#263238;
+         color:#BABABA;
+     }
+      
+     li{
+           float:left
+     }
+     .fab{
+       color:#BABABA;
+       font-size:40px;
+       margin-right:5px;
+     }
+     .links{
+         color:#BABABA;
+         margin:8px;
+        
+        
+         
+     }
+     .contact{
+         position:relative;
+         bottom:2px;
+         width:300px;
+         margin-left:10px;
+         
+   
+        
+         
+         
+   
+     }
+     .social{
+         position:relative;
+         bottom:100px;;
+         right:5%;
+         width:100px;
+          margin-top:25px;
+     }
+    #copyright{
+        position:relative;
+        top:50px;
+    }
+    .fa-facebook-square{
+        color:#4267B2
+    }
+     .fa-instagram{
+         color:#F31477
+     }
+     .fa-twitter-square{
+         color:#50ABF1
+     }
+     .fa-google-plus-square{
+         color:#DC4E41
+     }
+   </style>
+   
+   <footer>
+       <div class="container">
+            <div class="row">
+           <div class="col s12 m12">
+                   <ul class=" group">
+           <li><a class="links"  href="#">Home</a></li>
+           <li><a class="links" href="#">Hotel</a></li>
+           <li><a class="links" href="'/reservation'">Booking</a></li>
+           <li><a class="links" href="#">Events</a></li>
+           <li><a class="links" href="#">Resturant</a></li>
+           <li><a class="links" href="#">Locations</a></li>
+       </ul>
+           </div>
+       </div>
+   
+   
+       </div>
+   
+      
+       <div class="contact">
+           <h5 style="text-decoration:underline">Contact Us</h5>
+           <h6>1400 S Broad st.</h6>
+           <h6>Call Us: 215-555-5555</h6>
+       </div>
+   
+   
+       <ul class="right social">
+           <h6 class="center">Subscribe</h6>
+           <li><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
+           <li><a href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
+           <li><a href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a></li>
+           <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+           </ul>
+           <div class="center">
+               <h6 id="copyright">&copy; 2018 philmorehotels.com</h6>
+           </div>
+           
+   </footer>
+
+</body>
+<script>
+   $(document).ready(function () {
+      $('.tabs').tabs();
+   });
+   $('.sidenav').sidenav();
+   $('.slider').slider({
+      indicators:false
+   });
+
+</script>
+
+<script>
+   if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('worker.js', {
+         scope: '/'
+      })
+         .then(function (response) {
+
+            // Service worker registration done
+            console.log('Registration Successful', response);
+         }, function (error) {
+            // Service worker registration failed
+            console.log('Registration Failed', error);
+         })
+   }
+</script>
+
+
 </html>

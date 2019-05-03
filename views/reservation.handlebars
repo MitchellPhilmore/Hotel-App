@@ -1,81 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Reservations</title>
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <script
-         src="https://code.jquery.com/jquery-3.3.1.min.js"
-         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-         crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <!-- Compiled and minified CSS -->
-   </head>
-   <style>
-      .display-1{
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Reservations</title>
+   <!-- Compiled and minified CSS -->
+   <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <!-- Compiled and minified CSS -->
+</head>
+<style>
+   .display-1{
       color:lightgray;
       text-align:center;
       }
       nav{
       height:150px;
       }
-      i{
-      font-size:50px;
-      }
+     
+       body{
+      background:#F8F8F8
+   }
+   label{
+      font-size:20px;
+      color:black;
+   }
+  .form-group{
+     margin-top:15px;
+  }
+  p{
+     display:inline-block;
+     margin:5px;
+  }
+
+
+
+    
    </style>
-   <body>
-      <nav class=" blue-grey lighten-5">
+
+<body>
+     
+     
+     <head>
+       <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+   
+     </head>
+     
+     
+     
+     <style>
+   
+         html,
+         body {
+            height: 100%;
+            width: 100%;ed
+         }
+   
+         nav {
+            height: 80px;
+         }
+   
+         li {
+            margin: 3px;
+         }
+   
+         i {
+            color: black;
+         }
+   
+         mt-6 {
+            margin-top: 100px;
+         }
+   
+         .rooms {
+            height: 150px;
+            width: 100%;
+         }
+   
+         .card {
+            margin-top: 30px;
+            float: left;
+   
+         }
+   
+         img {
+            height: 200px;
+         }
+   
+           
+   
+         .brand-logo{
+            height:170px;
+            width:180px;
+            
+         }
+         #logo{
+            font-family: 'Satisfy', cursive;
+         }
+   
+   
+      </style>
+      <nav class=" blue-grey  blue-grey darken-4 z-depth-5">
          <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img class="brand-logo" style="height:200px; width:200px;"src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt=""></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li><a style="text-decoration: white"  class="black-text tab" href="/">Home</a></li>
-               <li> <a style="text-decoration: white" class="black-text tab" href="/showreservations">Reservations</a></li>
-               <li><a style="text-decoration: white"  class="black-text tab" href="/reservation">Book Room</a></li>
-               <li> <a style="text-decoration: white" class="black-text tab" href="api/reservation">Rooms API</a></li>
+            <a href="/">
+              
+             <div style=" border:5px solid gray;" class="brand-logo circle responsive-img  grey lighten-3">
+                <h5 id="logo" class="black-text" style="text-align:center; position:relative; top:40px;">Hotel Philmore</h5>
+                <img  style="height:110px; width:130px; position:relative; left:20px;" src="https://images.vexels.com/media/users/3/131725/isolated/preview/06ebd222648112be03fba98587ff2902-philadelphia-skyline-silhouette-by-vexels.png" alt="">
+                 
+                 </a>
+             </div>
+                 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="color:white" class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+               <li class=""> <a style="text-decoration:white" class="white-text tab" href="/showreservations">Reservations</a></li>
+               <li><a style="text-decoration: white" class="white-text tab right" href="/reservation">Booking</a></li>
+               <li> <a style="text-decoration: white" class="white-text tab" href="api/reservation">Reservations API</a></li>
+            </ul>
+            <ul class="sidenav" id="mobile-demo">
+                 <li><a href="/">Home</a></li>
+               <li><a href="/reservation">Booking </a></li>
+               <li><a href="/showreservations">Reservations</a></li>
+                <li><a href="api/reservation">API</a></li>
+             
             </ul>
          </div>
       </nav>
-      <br>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-10">
-               <form class="mt-4" method="POST" action="/reservation">
-                  <div class="font-weight-bold form-group">
-                     <label for="firstname">First Name</label>
-                     <input name="firstname" type="text" class="form-control" id="firstname"  placeholder="Enter firstname">
+     
+
+
+
+   <div class="container">
+      <div style=" margin-top:115px;" class="row">
+         <div class="col-md-10">
+            <form class="mt-4 form">
+               <div class="font-weight-bold form-group">
+                  <i style="font-size:30px;   color:#263238" class="material-icons">account_circle</i>
+                  <label for="firstname">First Name</label>
+                  <input name="firstname" type="text" class="validate" required="" aria-required="true" id="firstname"
+                     placeholder="Enter firstname">
+               </div>
+               <div class="form-group">
+                  <i style="font-size:30px; color:#263238" class="material-icons">account_circle</i>
+                  <label class="font-weight-bold" for="lastname">Last Name</label>
+                  <input name="lastname" type="text" class="validate" required="" aria-required="true" id="lastname"
+                     placeholder="Enter lastname">
+               </div>
+               <div class="form-group">
+                  <i style="font-size:30px; color:#263238" class="material-icons">email</i>
+                  <label class="font-weight-bold" for="email">Email</label>
+                  <input name="email" type="email" class="validate" required="" aria-required="true" id="email"
+                     placeholder="Enter email ">
+               </div>
+               <div class="form-group">
+                  <i style="font-size:30px; color:#263238" class="material-icons">phone</i>
+                  <label class="font-weight-bold" for="phone">Phone</label>
+                  <input name="phone" type="text" class="validate" required="" aria-required="true" id="phone"
+                     placeholder="Enter phone number">
+               </div>
+               <div class="form-group">
+                  <i style="font-size:30px; color:#263238" class="material-icons">date_range</i>
+                  <label class="font-weight-bold" for="checkin">Arrival</label>
+                  <input id="arrival" name="arrival" type="text" required="" aria-required="true" class="datepicker validate">
+               </div>
+               <div class="form-group">
+                  <i style="font-size:30px; color:#263238" class="material-icons">date_range</i>
+                  <label class="font-weight-bold" for="checkin">Departure</label>
+                  <input id="departure" name="departure" type="text" required="" aria-required="true" class="datepicker validate">
+               </div>
+               
+                  <div class="container">
+                     <div class="row ">
+
+                        <p>
+                           <label>
+                              <input  name="standard" value="standard" type="checkbox" />
+                              <span>Standard</span>
+
+
+
+                           </label>
+                        </p>
+                        <p>
+                           <label>
+                              <input name="king" value="king" type="checkbox" />
+                              <span>King</span>
+                           </label>
+                        </p>
+                        <p>
+                           <label>
+                              <input  name="double" value="double" type="checkbox" />
+                              <span>Double</span>
+                           </label>
+                        </p>
+                        <p>
+                           <label>
+                              <input  name="penthouse" value="penthouse" type="checkbox" />
+                              <span>Penthouse</span>
+                           </label>
+                        </p>
+                     </div>
                   </div>
-                  <div class="form-group"> 
-                     <label class="font-weight-bold" for="lastname">Last Name</label>
-                     <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Enter lastname">
+
+                  <br>
+                  <div class="center">
+                     <button id="submit"  type="submit" class="btn-large blue-grey darken-4 btn ">Submit</button>
                   </div>
-                  <div class="form-group"> 
-                     <label class="font-weight-bold" for="checkin">Arrival</label>
-                     <input name="arrival" type="text" class="datepicker">
-                  </div>
-                  <div class="form-group"> 
-                     <label class="font-weight-bold" for="checkin">Departure</label>
-                     <input name="departure" type="text" class="datepicker">
-                  </div>
-            </div>
-            <button style="position:relative; left:50%;" type="submit" class="btn-large black right">Submit</button>
             </form>
          </div>
       </div>
+   </div>
+  
+
+
+
+   <!-- Modal Structure -->
+   <div id="modal1" class="modal">
+      <div class="modal-content">
+         <h4>Reservation complete</h4>
+         <p>Thank You for booking at Hotel Philmore</p>
       </div>
-      <script>
-         $(document).ready(function(){
+      <div class="modal-footer">
+         <a href="/" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+   </div>
+
+   <script>
+      $(document).ready(function () {
          $('.datepicker').datepicker();
+         $('.sidenav').sidenav();
+    
+        
+       });
+
+           
+
+             function validiateForm(value){
+                return value === undefined
+             }
+
+             
+            
+                  $("#submit").click(() => {
+                        let formArray = [firstname,lastname,email,phone,arrival,departure]
+                     if(formArray.some(validiateForm) === true){
+                return
+             }
+              else{
+             let firstname = $('#firstname').val(),
+             lastname = $('#lastname').val(),
+             email = $('#email').val(),
+             phone = $('#phone').val(),
+             arrival = $('#arrival').val(),
+             departure = $('#departure').val()
+
+             $('.modal').modal();
+             $('#submit').attr('data-target','modal1')
+             $('#submit').attr('class','modal-trigger')
+
+            
+           
+            $.post("/reservation", $('.form').serialize(), data => {
+
+            });
+              }
          });
-          
-         $.get('api/reservation').then(data=>console.log(data))
+             
+
+
+      $.get('api/reservation').then(data => console.log(data))
+
+
+
+
+   </script>
+ 
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+ 
+ <style>
+   footer{
+       height:40%;
+       width:100%;
+       background:#263238;
+       color:#BABABA;
+   }
+    
+   li{
+         float:left
+   }
+   .fab{
+     color:#BABABA;
+     font-size:40px;
+     margin-right:5px;
+   }
+   .links{
+       color:#BABABA;
+       margin:8px;
+      
+      
+       
+   }
+   .contact{
+       position:relative;
+       bottom:2px;
+       width:300px;
+       margin-left:10px;
+       
+ 
+      
+       
+       
+ 
+   }
+   .social{
+       position:relative;
+       bottom:100px;;
+       right:5%;
+       width:100px;
+        margin-top:25px;
+   }
+  #copyright{
+      position:relative;
+      top:50px;
+  }
+  .fa-facebook-square{
+      color:#4267B2
+  }
+   .fa-instagram{
+       color:#F31477
+   }
+   .fa-twitter-square{
+       color:#50ABF1
+   }
+   .fa-google-plus-square{
+       color:#DC4E41
+   }
+ </style>
+ 
+ <footer>
+     <div class="container">
+          <div class="row">
+         <div class="col s12 m12">
+                 <ul class=" group">
+         <li><a class="links"  href="#">Home</a></li>
+         <li><a class="links" href="#">Hotel</a></li>
+         <li><a class="links" href="'/reservation'">Booking</a></li>
+         <li><a class="links" href="#">Events</a></li>
+         <li><a class="links" href="#">Resturant</a></li>
+         <li><a class="links" href="#">Locations</a></li>
+     </ul>
+         </div>
+     </div>
+ 
+ 
+     </div>
+ 
+    
+     <div class="contact">
+         <h5 style="text-decoration:underline">Contact Us</h5>
+         <h6>1400 S Broad st.</h6>
+         <h6>Call Us: 215-555-5555</h6>
+     </div>
+ 
+ 
+     <ul class="right social">
+         <h6 class="center">Subscribe</h6>
+         <li><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
+         <li><a href="https://www.twitter.com"><i class="fab fa-twitter-square"></i></a></li>
+         <li><a href="https://www.google.com"><i class="fab fa-google-plus-square"></i></a></li>
+         <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+         </ul>
+         <div class="center">
+             <h6 id="copyright">&copy; 2018 philmorehotels.com</h6>
+         </div>
          
-         
-      </script>
-   </body>
+ </footer></body>
+
 </html>
