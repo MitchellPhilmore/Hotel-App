@@ -5,10 +5,11 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     exhb = require('express-handlebars'),
     mongoose = require('mongoose')
+    config = require('./config')
 
     //Create Mongodb connection
 
-    let uri = 'mongodb://admin:mitch1987@ds161856.mlab.com:61856/hotelphilmore'
+    let uri = config.db
 
     //Model
     let Reservation = mongoose.model("Reservations",{
