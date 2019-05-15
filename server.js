@@ -16,7 +16,11 @@ let express = require('express'),
         firstname:String,
         lastname:String,
         arrival:String,
-        departure:String
+        departure:String,
+        email:String,
+        phone:String,
+        roomType:String,
+        price:String
     })
 
     let Reviews = mongoose.model("Reviews",{
@@ -75,7 +79,10 @@ let express = require('express'),
         firstname:firstname,
         lastname:lastname,
         arrival:arrival,
-        departure:departure
+        departure:departure,
+        phone:phone,
+        roomType:roomType,
+        price:price
     }
 
     let newEntry = new Reservation(newReservation)
